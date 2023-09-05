@@ -1,13 +1,3 @@
-// const checkbox = document.querySelector('.my-form input[type="checkbox"]');
-// const btns = document.querySelectorAll(".my-form button");
-
-// checkbox.addEventListener("change", function() {
-//   const checked = this.checked;
-//   for (const btn of btns) {
-//     checked ? (btn.disabled = false) : (btn.disabled = true);
-//   }
-// });
-
 const Validate=(event )=>{
     let error = 0;
     let firstName = document.form.fname
@@ -177,23 +167,4 @@ const Validate=(event )=>{
         tiresize.focus();
           error++;
     }
-
-    // if(model.value == ""){
-    //     model.style.border = "2px solid red";
-    //     modelError.textContent = "Please enter car model";
-    //     modelError.style = "color:red; font-family:serif ";
-    //     model.focus();
-    //       error++;
-    //  }
-    
-    
-
-    //   // generating unique numbers
-    //   const token = /^BB-([0-9]){3}+$/
-    //   const pCarRegex = /^BB-([0-9]){3}+$/
-    //   const truckCarRegex = /^BB-([0-9]){3}+$/
-    //   const taxiCarRegex =  /^BB-([0-9]){3}+$/
-    //   const coasterRegex =  /^BB-([0-9]){3}+$/
-    //   // eg BB-001, 
-    //  //   we go to let and say 
-    //  //  if(!(cartype.value.match)
+}

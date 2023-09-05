@@ -179,15 +179,12 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
     background: #198754 ;
 }
+
 .btn-facebook {
-    /* background-color: #405D9D; */
     color: white;
-    /* font-weight: bold; */
 }
 .btn-twitter {
-    /* background-color: #42AEEC; */
     color: white;
-    /* font-weight: bold; */
 
 }
 .divider-text {
@@ -226,4 +223,4 @@ header img {
     border-radius: 50%;
     background-color: #000;
   }
-  
+ 

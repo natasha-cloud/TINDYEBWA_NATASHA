@@ -1,11 +1,22 @@
-/* Apply a 3D card effect and styling to service sections */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
 .services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
-  align-items: stretch; /* Make sure all items have the same height */
+  align-items: stretch;
+  
 }
-
 .service-section {
   border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -42,13 +53,19 @@
 }
 
 .service-section a {
-  display: inline-block;
   padding: 8px 16px;
   background-color: #007bff;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s;
+  width:70%;
+  margin-left: 10%;
+  margin-bottom: 10%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .service-section a:hover {
@@ -56,10 +73,9 @@
 }
 
 .navbar-nav .nav-item.active .nav-link {
-  color: red;
+  color:  white;
 }
 
-h2{
-  text-align: center;
-}
+
+
 

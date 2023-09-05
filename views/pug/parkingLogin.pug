@@ -7,8 +7,9 @@ head
   script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
   script(src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
   link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.8/css/all.css')
-  link(rel='stylesheet' href='../css/ParkingLogin.css')
+  link(rel='stylesheet' href='css/ParkingLogin.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css')
+  link(rel='icon' type='image/png' sizes='16x16' href='images/favicon.ico')
 .wrapper
   p
     a.btn.btn-block.btn-twitter(href='https://twitter.com/i/flow/login?redirect_after_login=%2Flogin%3Flang%3Den')
@@ -21,15 +22,15 @@ head
     span.bg-light OR
   // <form>
   header
-    img(src='../images/logo.png' alt='logo' height='50')
-  form#formid(name='login' action='submit form' onsubmit='return Validate();' method='POST')
+    img(src='images/logo.png' alt='logo' height='50')
+  form#login(name='user' action='/api/login' onsubmit='return Validate();' method='POST')
     .field.email
       .input-area
         input#email(type='email' name='email' placeholder='Email Address')
         i.icon.fas.fa-envelope
         i.error.error-icon.fas.fa-exclamation-circle
       // <div class="error error-txt">Email can't be blank</div>
-      span#errorEmail
+      span#EmailError
     .field.password
       .input-area
         input#password(type='password' name='password' placeholder='Password')
@@ -38,13 +39,13 @@ head
       // <div class="error error-txt">Password can't be blank</div>
       span#errorPassword
     .pass-txt
-      a(href='#') Forgot password?
-    input(type='submit' value='Login')
+      a(href='/signUp') Forgot password?
+    button.btn.btn-primary.form-width(type='submit' name='Login') Login
   .sign-txt
     | Not yet member? 
-    a(href='/signUp') Sign Up now
+    a(href='signUp') Sign Up now
 //
   <footer>
   Copyright  &copy; Tindyebwa-2023.
   </footer>
-script(src='../js/ParkingLogin.js')
+script(src='js/ParkingLogin.js')

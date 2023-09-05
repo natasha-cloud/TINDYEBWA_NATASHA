@@ -39,3 +39,41 @@ if (password.value == "") {
     // return false;
   }
 };
+
+document.getElementById("login-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  const response = await fetch("/api/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, password }),
+  });
+
+  const data = await response.json();
+
+  if (data.loading) {
+x  } else {
+    // Redirect to another page
+    window.location.href = "/services"; 
+  }
+});
+ function myFunction(){
+  var x = document.getElementById("formid")
+  var y = document.getElementById("hide1")
+  var z = document.getElementById("hide2")
+  
+  if(x.type === 'password'){
+    x.type = "text";
+    y.style.display = "block";;
+    z.style.display = "none";
+  }
+  else {
+    x.type = "password";
+    y.style.display = "none";;
+    z.style.display = "block";
+  }
+  
+ }

@@ -3,33 +3,34 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Sign Up Page
-  link(rel='stylesheet' type='text/css' href='../css/ParkingRegister.css')
-  script(defer='' src='../js/registerValidation.js')
+  link(rel='stylesheet' type='text/css' href='css/ParkingRegister.css')
+  link(rel='icon' type='image/png' sizes='16x16' href='images/favicon.ico')
+  script(defer='' src='js/registerValidation.js')
 main
   .sign-up
-    form.signup-form(action='post' data-netlify='true')
+    form.signup-form(action='/api/register' method='Post' data-netlify='true')
       .form-btn
-        input#usernmae(placeholder='Username' type='text')
+        input#username(placeholder='Username' name='username' type='text')
         .error
         // <img class="icon" src="./Images/icon-error.svg" alt="Error">
         // <p class="msg">Name cannot be empty</p>
       .form-btn
-        input(type='email' placeholder='Email' required='')
+        input(type='email' placeholder='Email' name='email' required)
         // <img class="icon" src="./Images/icon-error.svg" alt="Error">
         // <p class="msg">Looks like this this not an email</p>
       .form-btn
-        input(type='text' placeholder='Phone Number' required='')
+        input(type='text' name='phoneNumber' placeholder='Phone Number' required)
         // <img class="icon" src="./Images/icon-error.svg" alt="Error">
         // <p class="msg">Phone Number cannot be empty</p>
       .form-btn
-        input(type='password' placeholder='Password' required='')
+        input(type='password' name='password' placeholder='Password' required='')
         // <img class="icon" src="images/" alt="Error">
         // <p class="msg">Password cannot be empty</p>
       .form-btn
-        input(type='password' placeholder='Confirm Password' required='')
+        input(type='password' name='password2' placeholder='Confirm Password' required='')
         // <img class="icon" src="images/" alt="Error">
         // <p class="msg">Password cannot be empty</p>
-      input#submit-btn(type='button' value='Sign Up')
+      button.btn.btn-primary.form-width(type='submit' name='signUp') Sign Up
       p.term
         | By clicking the button, you are agreeing to our 
         span
@@ -38,4 +39,4 @@ main
   <footer>
   Copyright  &copy; Tindyebwa-2023.
   </footer>
-script(src='../js/script.js')
+script(src='js/script.js')

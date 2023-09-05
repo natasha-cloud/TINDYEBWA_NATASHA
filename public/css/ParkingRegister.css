@@ -87,26 +87,14 @@ input {
 .form-btn {
     width: 100%;
 }
+
 textarea:focus, input:focus {
     outline: none;
     border-color: hsl(249, 10%, 26%);
     color: hsl(249, 10%, 26%);
 }
 
-#submit-btn {
-    background-color:  #6c83f8;
-    color: #ffffff;
-    border: none;
-    padding: 1em 0;
-    font-size: 1em;
-    font-weight: 500;
-    text-transform: uppercase;
-    box-shadow: 0 0.2em 0 ;
-}
-#submit-btn:hover {
-    cursor: pointer;
-    background-color:  #2c52ed;
-}
+
 .terms {
     color: hsl(246, 25%, 77%);
     font-size: .75em;
@@ -118,20 +106,17 @@ textarea:focus, input:focus {
     font-weight: 700;
 }
 .icon {
-    position: absolute; /* made the icon be by the right hand side of the form outside the form-btn */
-    margin: .8em 0 0 -3em; /* the icon entered inside */
+    position: absolute; 
+    margin: .8em 0 0 -3em; 
     opacity: 0;
 }
 .msg {
     color: hsl(0, 100%, 74%);
     font-style: italic;
     padding: .5em 0 0 0;
-    text-align: end; /* made the text underneath form-btn be at the end */
+    text-align: end; 
     display: none;
 }
-/* .msg, .icon {
-    display: none;
-} */
 
 @media(max-width: 992px) {
     main {
@@ -163,4 +148,20 @@ textarea:focus, input:focus {
         padding: 15px 60px;
         line-height: 1.5rem;
     }
+}
+.btn.btn-primary.form-width[type="submit"] { 
+    height: 50px;
+    margin-top: 30px;
+    color: #fff;
+    padding: 0 20px; 
+    border: none;
+    background: #007bff; 
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-radius: 5px; 
+}
+
+.btn.btn-primary.form-width[type="submit"]:hover { 
+    background: #0056b3; 
 }

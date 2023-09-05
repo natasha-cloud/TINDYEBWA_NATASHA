@@ -1,3 +1,16 @@
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px; 
+  }
+
+.logo-container img {
+    max-width: 100%;
+    height: auto; 
+}
+.logo {
+    max-width: 5px; 
+    height: auto;
+}
 @media screen and (max-width: 950px) {
     .nav-img {
       height: 25px;

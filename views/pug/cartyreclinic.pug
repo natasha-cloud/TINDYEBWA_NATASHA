@@ -4,13 +4,14 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM', crossorigin='anonymous')
-    link(rel='stylesheet', href='../css/cartyreclinic.css')
+    link(rel='stylesheet', href='css/cartyreclinic.css')
+    link(rel='icon' type='image/png' sizes='16x16' href='images/favicon.ico')
     title tyre clinic
   body
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       .container-fluid
         a.navbar-brand(href='#')
-          img(src='../images/logo.png', alt='logo', height='50')
+          img(src='images/logo.png', alt='logo', height='50')
         button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarNav.collapse.navbar-collapse
@@ -20,7 +21,7 @@ html(lang='en')
               <a class="nav-link" href="index.html">Home</a>
               </li>
             li.nav-item.active
-              a.nav-link(href='/services') Back
+              a.nav-link(href='/dashboard') Back
         .right-side
           button.btn.btn-primary(onclick='logout()') Log Out
           .hamburger
@@ -29,42 +30,31 @@ html(lang='en')
             span
     .ct-wrapper
       h1 Car Tyre Clinic
-      form
+      form(name='cartyreclinic' method='POST' action='/api/tyre' onSubmit='return Validate(event);')
         label(for='firstname')
           | Firstname:
-          span.required-field *
-        input#lastname(type='text', name='lastname')
-        label(for='lastname')
+          span#firstNameError.required-field *
+        input#firstname(type='text', name='firstName')
+        label(for='firstName')
           | Lastname:
-          span.required-field *
-        input#lastname(type='text', name='lastname')
+          span#errorLastName.required-field *
+        input#lastname(type='text', name='lastName')
         label(for='phone')
           | Phone Number:
-          span.required-field *
+          span#phoneError.required-field *
         input#phone(type='tel', name='phone', placeholder='+256')
         label(for='nin')
           | NIN:
-          span.required-field *
-        input#nin(type='text')
-        //
-          <label for="gender">Gender:
-          <span class="required-field">*</span>
-          </label>
-          <select id="gender">
-          <option value="" disabled selected>Select Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-          </select>
-        // time
+          span#ninError.required-field *
+        input#nin(type='text', name='nin')
         label(for='arrival-time')
           | Time (12-hour format):
           span.required-field *
-        input#time(type='time', name='a-time')
+        input#time(type='time', name='time')
         label(for='date')
           | Date:
           span.required-field *
-        input#date(type='date', name='a-time', step='1', pattern='[0-9]{2}:[0-9]{2} [A-Za-z]{2}', required='')
+        input#date(type='date', name='date', step='1', pattern='[0-9]{2}:[0-9]{2} [A-Za-z]{2}', required='')
         // numberplate
         label(for='numberPlate')
           | Number Plate:
@@ -74,13 +64,13 @@ html(lang='en')
           | Car Model:
           span.required-field *
         input#modelType(type='text', name='modelType')
-        label(for='service') Select Service:
-        select#service(name='service', onchange='calculateAmount()')
-          option(value='') Select a Service
+        label(for='tyre') Select Service:
+        select#tyreService(name='tyreService', onchange='calculateAmount()')
+          option(value='')
           option(value='tirePressure') Tire Pressure ugx500
           option(value='punctureFixing') Puncture Fixing ugx5000
           option(value='valves') Valves ugx5000
-        button(type='button') Submit
+        button.btn.btn-primary.form-width(type='submit' name='submit') Submit
     footer
       | Copyright  &copy; Tindyebwa-2023.
-    script(src='../js/script.js')
+    script(src='js/script.js')

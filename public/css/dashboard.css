@@ -14,6 +14,9 @@
       width: 800px;
     }
   }
+  .hidden {
+    display: none;
+  }
    
   @media screen and (max-width: 850px) {
     .nav-img {
@@ -100,27 +103,11 @@
     .item1,
     .items {
       width: 550px;
+      text-align: left;
     }
   }
    
-  @media screen and (max-width: 400px) {
-    .recent-Articles {
-      font-size: 17px;
-    }
-    .view {
-      width: 60px;
-      font-size: 10px;
-      height: 27px;
-    }
-    .report-header {
-      height: 60px;
-      padding: 10px 10px 5px 10px;
-    }
-    .searchbtn img {
-      height: 20px;
-    }
-  }
-   
+  
   @media screen and (max-width: 320px) {
     .recent-Articles {
       font-size: 12px;
@@ -144,6 +131,7 @@
     .item1,
     .items {
       width: 300px;
+
     }
     .report-body {
       padding: 10px;
@@ -158,3 +146,54 @@
       width: 180px;
     }
   }
+ 
+.report-container.center-table {
+  display: flex;
+  justify-content: center;
+}
+
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead.table-dark th {
+  background-color:var(--Border-color);
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+tbody tr {
+  text-align: center;
+}
+
+tbody td {
+  padding: 15px 10px;
+}
+
+td button,
+td a {
+  padding: 5px 10px;
+}
+
+td button {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+td a {
+  background-color: rgb(0, 177, 0);
+  color: black;
+  text-decoration: none;
+}
+
+td p {
+  margin: 0;
+}
+
+ 

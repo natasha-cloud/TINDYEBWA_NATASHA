@@ -177,14 +177,6 @@ const Validate=(event )=>{
         nin.focus();
           error++;
     }
-    
+}
 
-    //   // generating unique numbers
-    //   const token = /^BB-([0-9]){3}+$/
-    //   const pCarRegex = /^BB-([0-9]){3}+$/
-    //   const truckCarRegex = /^BB-([0-9]){3}+$/
-    //   const taxiCarRegex =  /^BB-([0-9]){3}+$/
-    //   const coasterRegex =  /^BB-([0-9]){3}+$/
-    //   // eg BB-001, 
-    //  //   we go to let and say 
-    //  //  if(!(cartype.value.match)
+

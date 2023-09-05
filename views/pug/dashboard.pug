@@ -1,0 +1,87 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width,initial-scale=1.0')
+  title admin-dashboard
+  link(rel='icon' type='image/png' sizes='16x16' href='images/favicon.ico')
+  link(rel='stylesheet' href='css/dashboard.css')
+  link(rel='stylesheet' href='css/responsive.css')
+header
+  img(src='images/logo.png' alt='logo' height='50')
+  .logosec
+    img#menuicn.icn.menuicn(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png' alt='menu-icon')
+  .searchbar
+    input(type='text' placeholder='Search')
+    .searchbtn
+      img.icn.srchicn(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png' alt='search-icon')
+  .message
+    .circle
+    img.icn(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png' alt='')
+    .dp
+      img.dpicn(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png' alt='dp')
+.main-container
+  .navcontainer
+  nav.nav
+    .nav-upper-options
+      a.nav-option.option1(href='/dashboard')
+        img.nav-img(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png', alt='dashboard')
+        h3 Dashboard
+      a.nav-option.option2(href='/battery')
+        img.nav-img(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png', alt='articles')
+        h3 Battery
+      a.nav-option.option3(href='/tyreclinic')
+        img.nav-img(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png', alt='report')
+        h3 Car Tyre Clinic
+      a.nav-option.option4(href='/parking')
+        img.nav-img(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png', alt='institution')
+        h3 Parking
+      a.nav-option.option5(href='/profile')
+        img.nav-img(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png', alt='blog')
+        h3 Profile
+      a.nav-option.logout
+        img.nav-img(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png', alt='logout')
+        h3.btn.btn-primary(onclick='logout()') Log Out
+  .main
+    .searchbar2
+      input(type='text' name='dashboard' id='' placeholder='Search')
+      .searchbtn
+        img.icn.srchicn(src='https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png' alt='search-button')
+      div#table-container
+  table.table.table-dark.table-striped.table-hover
+    thead.table-dark
+      tr
+        th(scope='col') FirstName
+        th(scope='col') Lastname
+        th(scope='col') Phone 
+        th(scope='col') Date 
+        th(scope='col') NIN
+        th(scope='col') Delete
+        th(scope='col') Edit
+    
+    tbody
+    if batteries.length 
+      each battery in batteries
+        tr.searchable-row
+          td #{battery.firstName}
+          td #{battery.lastName}
+          td #{battery.phone}
+          td #{battery.date}
+          td #{battery.nin}
+          //td #{battery.battery}
+          td 
+            form(action='/api/battery/delete' method='POST')
+              input(type="hidden" name='id' value=battery._id)
+              button.btn.btn-danger(type="submit" onclick="confirmDelete(event)") Delete
+          td  
+            a.btn.btn-warning(href="/api/battery/edit/"+battery._id) Edit
+    //- else 
+      //- p there are no employees in the database
+script(src='js/index.js')
+script.
+  function logout() {
+  alert("Are sure you want logout!");
+  setTimeout(function() {
+  window.location.href = "/logout";
+  }, 2000);
+  }

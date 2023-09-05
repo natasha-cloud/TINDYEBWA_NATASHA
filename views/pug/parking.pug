@@ -1,26 +1,22 @@
 doctype html
-html(lang='en')
+html( lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM', crossorigin='anonymous')
-    link(rel='stylesheet', href='../css/client.css')
-    title Client Registration
+    link(rel='stylesheet', href='css/parking.css')
+    link(rel='icon' type='image/png' sizes='16x16' href='images/favicon.ico')
+    title parking
   body
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       .container-fluid
         a.navbar-brand(href='#')
-          img(src='../images/logo.png', alt='logo', height='50')
+          img(src='images/logo.png', alt='logo', height='50')
         button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarNav.collapse.navbar-collapse
           ul.navbar-nav
-            //
-              <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-              </li>
             li.nav-item.active
-              //- a.nav-link(href='../html/services.html') Services
         .right-side
           button.btn.btn-primary(onclick='logout()') Log Out
           .hamburger
@@ -30,28 +26,28 @@ html(lang='en')
     div
       .ct-wrapper
         h1 Client Registration
-        form
+        form(name='parking' method='POST' action='/api/parking' onSubmit='return Validate(event);')
           label(for='firstname')
             | Firstname:
-            span.required-field *
-          input#lastname(type='text', name='lastname')
-          label(for='lastname')
+            span#firstNameError.required-field *
+          input#firstname(type='text', name='firstname')
+          label(for='firstname')
             | Lastname:
-            span.required-field *
+            span#errorLastName.required-field *
           input#lastname(type='text', name='lastname')
           label(for='phone')
             | Phone Number:
-            span.required-field *
+            span#phoneError.required-field *
           input#phone(type='tel', name='phone', placeholder='+256')
           label(for='nin')
             | NIN:
-            span.required-field *
-          input#nin(type='text')
+            span#ninErrorr.required-field *
+          input#nin(type='text', name='nin')
           label(for='gender')
             | Gender:
             span.required-field *
           select#gender
-            option(value='', disabled='', selected='') Select Gender
+            option(value='', disabled='', selected='')
             option(value='Male') Male
             option(value='Female') Female
             option(value='Other') Other
@@ -59,7 +55,7 @@ html(lang='en')
           label(for='arrival-time')
             | Time (12-hour format):
             span.required-field *
-          input#time(type='time', name='a-time')
+          input#time(type='time', name='time')
           // Date
           label(for='Date')
             | Date of Birth:
@@ -73,14 +69,14 @@ html(lang='en')
           // car model
           label(for='Model')
             | Model:
-            span.required-field *
+            span#errorcar.required-field *
           input#modelType(type='text', name='modelType')
           .form-group
             label(for='car-type')
               | Vehicle Type:
               span.required-field *
-            select#Vehicle-type(name='Vehicle')
-              option(value='', disabled='', selected='') Select Car Type
+            select#type(name='carType')
+              option(value='', disabled='', selected='')
               option(value='Trucks') Trucks
               option(value='Personal car') Personal car(not above 5 seaters)
               option(value='Taxi') Taxi(below 14 seaters)
@@ -88,10 +84,23 @@ html(lang='en')
               option(value='Motor Bike') Boda boda
             span#car-type-error
             span#carTypeSelect-error
+            .form-group
+            label(for='car-type')
+              | Services:
+              span.required-field *
+            select#services(name='services')
+              option(value='', disabled='', selected='')
+              option(value='car washing') Car washing
+              option(value='tyreClinic') Tyre Clinic
+              option(value='battery') Battery Hire
+              option(value='parking') Parking
+              option(value='Other') Other
+            span#service-error
+            span#serviceSelect-error
           .form-group
             label(for='color')
               | Color:
               span.required-field *
             input#color(type='text', name='color')
-          button(type='button') Submit
-      script(src='../js/validation.js')
+          button.btn.btn-primary.form-width(type='submit' name='submit') Submit
+      script(src='js/validation.js')

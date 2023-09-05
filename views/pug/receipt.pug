@@ -1,0 +1,30 @@
+doctype html
+head
+  link(rel='stylesheet' href='css/receipt.css')
+  title Receipt
+  body
+    nav.navbar
+      .container-fluid
+        a.navbar-brand(href='#')
+          img(src='images/logo.png', alt='logo', height='50')
+        .right-side
+          button.btn.btn-primary(onclick='logout()') Log Out
+.receipt
+  .header
+    h1 RECEIPT
+  .details
+    p Date: #{battery.date}
+    p Receipt Number: [232415]
+    p Amount Received: Ugx30000
+    p For the Payment of:#{battery.batterySize} 
+    p Paid by:  #{battery.firstName}
+    p Received by: Dockville
+script.
+  function logout() {
+  alert("logout successful!");
+  setTimeout(function() {
+  window.location.href = "/logout";
+  }, 2000);
+  }
+
+

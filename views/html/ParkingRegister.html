@@ -5,46 +5,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up Page</title>
-  <link rel="stylesheet" type="text/css" href="../css/ParkingRegister.css">
-  <script defer src="../js/registerValidation.js"></script>
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/images/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/public/css/ParkingRegister.css">
+  <script defer src="/public/js/registerValidation.js"></script>
 </head>
 
 <body>
   <main>
     <div class="sign-up">
-      <form action="post" class="signup-form" data-netlify="true">
+      <form method="POST" action="signUp" class="signup-form" data-netlify="true">
         <div class="form-btn">
-          <input id ="usernmae" placeholder="Username" type="text">
+          <input id ="username" name="username" placeholder="Username" type="text">
           <div class="error"></div>
-
-          <!-- <img class="icon" src="./Images/icon-error.svg" alt="Error"> -->
-          <!-- <p class="msg">Name cannot be empty</p> -->
         </div>
 
         <div class="form-btn">
-          <input type="email" placeholder="Email" required>
+          <input type="email" name="email" placeholder="Email" required>
           <!-- <img class="icon" src="./Images/icon-error.svg" alt="Error"> -->
           <!-- <p class="msg">Looks like this this not an email</p> -->
         </div>
         <div class="form-btn">
-          <input type="text" placeholder="Phone Number" required>
+          <input type="text" name="phoneNumber" placeholder="Phone Number" required>
           <!-- <img class="icon" src="./Images/icon-error.svg" alt="Error"> -->
           <!-- <p class="msg">Phone Number cannot be empty</p> -->
         </div>
 
         <div class="form-btn">
-          <input type="password" placeholder="Password" required>
+          <input type="password" name="password" placeholder="Password" required>
           <!-- <img class="icon" src="images/" alt="Error"> -->
           <!-- <p class="msg">Password cannot be empty</p> -->
         </div>
         <div class="form-btn">
-          <input type="password" placeholder="Confirm Password" required>
+          <input type="password" name="password2" placeholder="Confirm Password" required>
           <!-- <img class="icon" src="images/" alt="Error"> -->
           <!-- <p class="msg">Password cannot be empty</p> -->
         </div>  
 
 
-        <input id="submit-btn" type="button" value="Sign Up" id="btn">
+        <input id="submit-btn" type="submit" value="Sign Up" id="btn">
         <p class="term">By clicking the button, you are agreeing to our <span><a href="#">Terms and Services</a></span></p>
       </form>
       </section>
@@ -52,6 +50,6 @@
   <!-- <footer>
     Copyright  &copy; Tindyebwa-2023.
 </footer> -->
-<script src="../js/script.js"></script>
+<script src="/public/js/script.js"></script>
 </body>
 </html>
